@@ -18,15 +18,15 @@ After having completed the survey or experiment, an exit code (redemption code) 
 The worker has to transfer this exit code with copy and paste to Amazon Mechnical Turk.
 This procedure is very robust and easy to understand for turkers.
 
-- See script [QualtricsPanel.ps1] for details how to create a panel.
-- See file [Checkout]() for instructions to setup a 'Custom end of survey message'.
+- See script [QualtricsPanel.ps1](https://github.com/DeSciL/Qualtrics/blob/master/QualtricsPanel.ps1) for details how to create a panel.
+- See file [Checkout](https://github.com/DeSciL/Qualtrics/blob/master/Checkout.md) for instructions to setup a 'Custom end of survey message'.
 - See file Factorial (tba) for instructions to setup a panel with predefined factorial designs 
 
 ### 3. HIT Definition 
 
 - More details and instructions (tba)
-- See file [HitDefinition.json]() for details.
-- See script [HitDefinition.ps1]() to process 
+- See file [HitDefinition.json](https://github.com/DeSciL/Qualtrics/blob/master/HitDefinition.json) for details.
+- See script [HitDefinition.ps1](https://github.com/DeSciL/Qualtrics/blob/master/HitDefinition.ps1) to process definition files.
 
 ### 4. Experimental designs
 
@@ -45,4 +45,4 @@ This procedure is very robust and easy to understand for turkers.
 
 ### License
 
-[MIT]()
+[MIT](https://github.com/DeSciL/Qualtrics/blob/master/LICENSE)
