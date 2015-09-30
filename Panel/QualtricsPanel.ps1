@@ -118,13 +118,15 @@ function Get-CodesFromQualtricsPanel([string]$Path, [string]$Delimiter=",") {
   foreach($p in $panelists) {
     $ec = $p.'Last Name'
     $ac = $qp.GetAccessCode($p.Link)
+    $link = $qp.GetAccessLink($p.Link)
     $qp.AddCode($ac, $ec)
   }
 
   $codeFilePath = $Path.Replace(".csv", "-codes.csv")
-
+  $numCodes = $qp.Codes.Count
   $qp.Codes | Export-Csv -Path $codeFilePath -NoTypeInformation -Encoding UTF8
-  Write-Host "Codelist '$codeFilePath' created."
+  Write-Output "Created codelist with $numCodes codes: '$codeFilePath'"
+  Write-Output "Link: $link"
 }
 
 ###############################################################################
@@ -250,7 +252,32 @@ public class QualtricsPanel
     public string GetAccessCode(string link)
     {
         var pos = link.IndexOf("_MLRP_");
-        return link.Substring(pos).Replace("_MLRP_", "").Trim();
+        link = link.Substring(pos).Replace("_MLRP_", "").Trim();
+        
+        //Strip any query strings after code
+        if(link.IndexOf("&") >= 0)
+        {
+            link = link.Substring(0, link.IndexOf("&")).Trim();
+        }
+        return link;
+    }
+
+    /// <summary>
+    /// Return trimmed survey link
+    /// </summary>
+    /// <param name="link">Survey link</param>
+    /// <returns>Survey link without access code</returns>
+    public string GetAccessLink(string link)
+    {
+        // TODO: Generalize
+        // Check if there are additional query strings
+        if(link.IndexOf("&") >= 0)
+        {
+            var qs = link.Substring(link.IndexOf("&")+1);
+            link = link.Replace("SE?Q_DL", "SE?" + qs + "&Q_DL");
+        }
+        var pos = link.IndexOf("_MLRP_");
+        return link.Substring(0, pos + 6).Trim();
     }
 
     /// <summary>

@@ -28,12 +28,12 @@ This procedure is very robust and easy to understand for turkers.
 - See file [HitDefinition.json](https://github.com/DeSciL/Qualtrics/blob/master/HitDefinition.json) for details.
 - See script [HitDefinition.ps1](https://github.com/DeSciL/Qualtrics/blob/master/HitDefinition.ps1) to process definition files.
 
-### 4. Experimental designs
+### 4. Supported research designs
 
 - Cross-section from AMT posting
-- Repeated cross-section with no retakes (trend)
-- Panel design, repeated measurement with eMail invitations
-- (Scheduled) pool recruitment [Beta]
+- Repeated cross-section without retakes (trend)
+- Panel design, repeated measurement with e-mail reminders
+- Scheduled pool recruitment for real-time games [in preparation]
 
 ### 5. Advanced
 
