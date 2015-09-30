@@ -7,7 +7,7 @@ Setup of Qualtrics for surveys and experiments at ETH DeSciL
 The cornerstone of "ethical proof" data collection is to aquire informed consent from the respondent before you start your data collection. 
 Find some examples we have used in previous studies below. We recommend to add 'informed consent' forms infront of all your surveys.
 
-- [Consent Form](https://github.com/DeSciL/DescilQualtrics/blob/master/Consent.md)
+- [Consent Form](Consent/Consent.md)
 - Data protection rules (tba)
 
 ### 2. Panel Setup
