@@ -36,7 +36,8 @@ We post HITs with command line tools (PsAmt) against the Amazon Mechanical Turk 
 - Hosting [web assets](Misc/Hosting.md) (javascript, images) on DeSciL on-premises or cloud servers
 - [WebService](Misc/WebService.md) Checkin/Checkout for real-time treatments
 - PHP Scripts for [Factorial Surveys](Misc/Factorial/)
-- JavaScript WebService for IAT (AJAX, soon)
+- JavaScript WebService for IAT (AJAX) [in beta]
+- [Faq](Misc/Faq.md)
 
 ### License
 
