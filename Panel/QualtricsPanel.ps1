@@ -1,5 +1,5 @@
 ﻿###################################################################################################
-# Generate a Code List with a Qualtrics Panel
+# Generate a Code List from a Qualtrics Panel
 # stwehrli@gmail.com
 # 6jul2015
 
@@ -35,8 +35,8 @@
   The function below will create a CSV File with the following format:
   
   FirstName, LastName, PrimaryEmail, ExternalDataReference,	...
-  1,	       oqHh6..., info@fake..., oqHh6FDxeSTRec3,	...	
-  2,         zZEPX..., info@fake..., zZEPXySucUcmk2b,	...	
+  1, oqHh6FDxeSTRec3, info@no-mail.com, oqHh6FDxeSTRec3,	...	
+  2, zZEPXySucUcmk2b, info@no-mail.com, zZEPXySucUcmk2b,	...	
   
   The exit codes are now stored in the fields LastName and ExternalDataReference.
   You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ 
@@ -111,7 +111,7 @@ function New-QualtricsPanel {
         [Parameter(Position=0, Mandatory=$true)]
         [int]$Panelists,
         [Parameter(Position=1, Mandatory=$false)]
-        [string]$Path="AccessCodes.csv",
+        [string]$Path="ExitCodes.csv",
         [Parameter(Position=1, Mandatory=$false)]
         [string]$Delimiter=","
     )
@@ -137,6 +137,9 @@ function Get-CodesFromQualtricsPanel {
  .PARAMETER Path
   Specifies the path to the CSV file containing the access codes.
  
+ .PARAMETER OutPath
+  Specifies the path to the CSV of the final code file.
+ 
  .PARAMETER Delimiter
   Specifies the delimiter for Import-CSV
   
@@ -146,24 +149,25 @@ function Get-CodesFromQualtricsPanel {
     Param(
         [Parameter(Position=0, Mandatory=$true)]
         [string]$Path,
-        [Parameter(Position=0, Mandatory=$false)]
+        [Parameter(Position=1, Mandatory=$false)]
+        [string]$OutPath = $Path.Replace(".csv", "-Codes.csv"),
+        [Parameter(Position=2, Mandatory=$false)]
         [string]$Delimiter = ","
     )
   
-    $qp = New-Object QualtricsPanel
+    $qualtricsPanel = New-Object QualtricsPanel
     $panelists = Import-Csv -Path $Path -Delimiter $Delimiter
     foreach($p in $panelists) {
-        $ec = $p.'Last Name'
-        $ac = $qp.GetAccessCode($p.Link)
-        $link = $qp.GetAccessLink($p.Link)
-        $qp.AddCode($ac, $ec)
+        $exitCode = $p.'Last Name'
+        $accessCode = $qualtricsPanel.GetAccessCode($p.Link)
+        $link = $qualtricsPanel.GetAccessLink($p.Link)
+        $qualtricsPanel.AddCode($accessCode, $exitCode)
     }
 
-    $codeFilePath = $Path.Replace(".csv", "Codes.csv")
-    $numCodes = $qp.Codes.Count
-    $qp.Codes | Export-Csv -Path $codeFilePath -NoTypeInformation -Encoding UTF8
+    $numCodes = $qualtricsPanel.Codes.Count
+    $qualtricsPanel.Codes | Export-Csv -Path $OutPath -NoTypeInformation -Encoding UTF8
     Write-Output "Created codelist with $numCodes codes: '$codeFilePath'"
-    Write-Output "Link: $link"
+    Write-Output "Access Link: $link"
 }
 
 ###################################################################################################
@@ -218,7 +222,7 @@ public class Panelist
     {
         FirstName = firstName;
         LastName = lastName;
-        PrimaryEmail = "info@fakemail.com";
+        PrimaryEmail = "info@no-mail.com";
         ExternalDataReference = lastName;
     }
 }
