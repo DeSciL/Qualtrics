@@ -7,9 +7,8 @@ is saved, you can choose it under tab 'Edit Surveys' > toolbox 'Survey Options' 
 'Survey Termination' by ticking the option 'Custom end of survey message' and selecting
 your template. Such a template could look like this:
 
---- 
 
-     ### Checkout
+     Checkout
 
      You have finished the study. Thank you for taking your time! 
      In order to receive your payment you must copy and paste the 
@@ -21,5 +20,3 @@ your template. Such a template could look like this:
      If you encounter problems submitting this HIT, please search 
      for a HIT called "ETH Descil Trouble Ticket" and report your 
 	 problem there.
-
----
