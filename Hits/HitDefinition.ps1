@@ -6,7 +6,8 @@
 # Source directly from GitHub into PowerShell:
 # $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/HitDefinition.ps1"
 # iex ((new-object net.webclient).DownloadString($url))
-
+# help about_HITDefinition
+#
 ###############################################################################
 <# 
  .SYNOPSIS 

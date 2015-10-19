@@ -15,6 +15,7 @@ call it `Study1`.
 3. `Study1-Codes.csv`: A CSV file with access and exit codes where the former protects your survey and latter proves task completion for the worker. 
 
 These three files define the HIT exhaustively.
+
 ---
 
 #### 1. HIT Definition
@@ -33,20 +34,24 @@ The simplest way to create a HIT definition is to modify the file with a text ed
 		"QualCountry":  "US",
       }
 	  
-A full and annotated version of the HIT definition is here. Additionally, 
-the following PowerShell script might help to create, validate, and submit your definition.
+A full and annotated version of the HIT definition is [HitDefinition.json](HitDefinition.json), the minimal version is here: [HitDefinition-Mini.json](HitDefinition-Mini.json). Additionally, 
+the following PowerShell script [HitDefinition.ps1](HitDefinition.ps1) might help to create, validate, and submit your definition. It can be sourced directly with:
+
+     $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/HitDefinition.ps1"
+	 iex ((new-object net.webclient).DownloadString($url))
+     help about_HITDefinition
 
 #### 2. HIT Instructions
 
 On the HIT previw page on Mturk we display your `<div />`. Instructions will be rendered with [boostrap](http://getbootstrap.com/). 
 
      <div>
-     <p><b>Purpose of the study:</b> To understand decision making processes</p> 
-     <p><b>What you will do:</b> If you decide to participate, you will fill out a questionnaire. <p>  
-     <p><b>Time required:</b>  The study will take approximately 15 minutes to complete.</p>    
-     <p><b>Risks:</b> There are no anticipated risks associated with participating in this study.</p>  
-     <p><b>Compensation:</b> You will receive USD 1 for participating.</p>
-     <p><b>Support:</b> In case you run into a problem, please search for a HIT called 'Trouble Ticket' and report your issues there.</p>
+		<p><b>Purpose of the study:</b> To understand decision making processes</p> 
+		<p><b>What you will do:</b> If you decide to participate, you will fill out a questionnaire. <p>  
+		<p><b>Time required:</b>  The study will take approximately 15 minutes to complete.</p>    
+		<p><b>Risks:</b> There are no anticipated risks associated with participating in this study.</p>  
+		<p><b>Compensation:</b> You will receive USD 1 for participating.</p>
+		<p><b>Support:</b> In case trouble, search for a HIT called 'ETH Trouble Ticket'.</p>
 	 </div>
 
 #### 3. Code Sharing
