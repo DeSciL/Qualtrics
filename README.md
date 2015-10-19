@@ -16,24 +16,27 @@ The HIT definition assembles all required information to upload a HIT to Mturk, 
 
 ### 3. Informed Consent
 
-The cornerstone of "ethical proof" data collection is to aquire informed consent from the respondent before you start your data collection. 
-Find some examples we have used in previous studies below. We recommend to add 'informed consent' forms in front of all your surveys.
+Best strategy of "ethical proof" data collection is to aquire informed consent from the respondent before you start your data collection. 
+Find some examples we have used in previous studies below. We recommend adding such a form in front of all your surveys.
 
 - [Consent Form](Consent/Consent.md)
 
-### 4. Supported research designs
+### 4. Supported Research Designs
+
+We post HITs with command line tools (PsAmt) against the Amazon Mechanical Turk Web API. In theory, this enables us to support the following research designs: 
 
 - Cross-section from AMT posting
 - Repeated cross-section without retakes (trend)
 - Panel design, repeated measurement with e-mail reminders
-- Scheduled pool recruitment for real-time games [in preparation]
+- DeSciL pool recruitment to speed up data colletion time
+- Scheduled pool recruitment for real-time games [in beta]
 
 ### 5. Miscellaneous
 
-- Hosting web assets (javascript, images) on DeSciL on-premises or cloud servers
-- WebService Checkin/Checkout for real-time treatments
-- JavaScript WebService for IAT (AJAX)
-- Automatic data exports/transforms
+- Hosting [web assets](Misc/Hosting.md) (javascript, images) on DeSciL on-premises or cloud servers
+- [WebService](Misc/WebService.md) Checkin/Checkout for real-time treatments
+- PHP Scripts for [Factorial Surveys](Misc/Factorial/)
+- JavaScript WebService for IAT (AJAX, soon)
 
 ### License
 
