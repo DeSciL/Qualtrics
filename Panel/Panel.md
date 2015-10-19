@@ -23,9 +23,9 @@ Type `help about_QualtricsPanel` for details.
 
 ### 2. Create a list with exit codes (exit list)
 
-The function below will create a CSV File 
+The function below will create a CSV File for a HIT called 'Survey1'.
 
-     New-QualtricsPanel -Panelists 20 -Path "myPanel.csv"
+     New-QualtricsPanel -Panelists 20 -Path "Survey1-ExitCodes.csv"
 
 with the following format:
 
@@ -36,12 +36,12 @@ with the following format:
 | ...        | ...             | ...               | ...                   | ... |
 
 The exit codes are now stored in the fields LastName and ExternalDataReference.
-You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control 
-the flow of your survey (not displayed here). 
+Note: You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control 
+the flow of your survey. 
 
 ### 3. Upload exit codes into a Qualtrics panel
 
-In a second step, this file must be imported into a new Qualtrics panel. 
+In a thrid step, this file must be imported into a new Qualtrics panel. 
 In Qualtrics click on the tab 'Panels'. Then click on the green button on the
 right side to create a new panel. Name the panel similar to your survey.
 Then click on 'Import From a File'. Click browse and choose your CSV file. 
@@ -49,24 +49,23 @@ In the dialog 'Import/Update From a File' just click import.
 
 ### 4. Link your survey to the panel and generate an access link list.
 
-In the third step, the survey must be linked to the panel. First select 
+In a fourth step, the survey must be linked to the panel. First select 
 your survey, go to 'Survey Options' (in the toolbar) and tick the option 
 'By Invitation only' under 'Survey Protection'. Save Changes. Then click
 on the tab 'Distribute Survey' Activate your survey. Below the yellow box, 
 click on 'Generate Links'. Select the panel from your library, and 'Select 
 Entire Panel'. Then click on 'Generate Links'. This will generate a 
 downloadable CSV that contains the survey access links. Rename this file
-to 'MyPanelLinks.csv'.
+to 'Survey1-AccessCodes.csv'.
 
 ### 5. Create the code list
 
-In step four, you have to extract the access codes (passwords) and exit 
+In step five, you have to extract the access codes (passwords) and exit 
 codes and merge them into a DeSciL code file with the following function:
 
-     Get-CodesFromQualtricsPanel -Path "MyPanelLinks.csv"
+     Get-CodesFromQualtricsPanel -Path "Survey1-AccessCodes.csv"
 
-This will generate the final code file (MyPanelLinks-Codes.csv) 
-you have to submit to DeSciL staff.
+This will generate the final code file "Survey1-Codes.csv" you have to submit to DeSciL staff.
 
 ### Misc
 
