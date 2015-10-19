@@ -1,6 +1,6 @@
 # Checkout with Custon End of Survey Question
 
-In Qualtrics, go to the tab 'Library' > toolbar 'Message Library' and create a new message. 
+In Qualtrics, go to the tab 'Library' > Toolbar 'Message Library' and create a new message. 
 Chose Category 'End of Survey Message' and add 'Mturk Checkout' as a description.
 Paste the text below into the text field and format as you please. As soon as the message 
 is saved, you can choose it under tab 'Edit Surveys' > toolbox 'Survey Options' > section
