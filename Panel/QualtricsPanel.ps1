@@ -1,5 +1,5 @@
-﻿###############################################################################
-# Generate a Qualtrics Panel File
+﻿###################################################################################################
+# Generate a Code List with a Qualtrics Panel
 # stwehrli@gmail.com
 # 6jul2015
 
@@ -12,9 +12,9 @@
 # iex ((new-object net.webclient).DownloadString($url))
 
 # For getting help, type the following into the PowerShell cosole:
-# > help about_QualtricsPanel
+# help about_QualtricsPanel
 
-###############################################################################
+###################################################################################################
 <# 
  .SYNOPSIS 
   Setup a Qualtrics Panel
@@ -75,7 +75,8 @@
 #>
 function about_QualtricsPanel {}
 
-###############################################################################
+###################################################################################################
+function New-QualtricsPanel {
 <# 
  .SYNOPSIS 
   Create a new Qualtrics panel
@@ -90,21 +91,41 @@ function about_QualtricsPanel {}
   ExternalDataReference: ExitCode again
   EmbeddedDataA:         Additional panel attributes
   EmbeddedDataB:         Additional panel attributes
+  
+ .PARAMETER Panelist
+  Specifies the number of participants the panel should hold.
+  
+ .PARAMETER Path
+  Specifies the path to the CSV file containing the panel.
+  
+ .PARAMETER Delimiter
+  Specifies the delimiter for Import-CSV
 
  .EXAMPLE
   New-QualtricsPanel -Panelists 100 -Path mypanel.csv
-#>
-function New-QualtricsPanel([int]$Panelists=20, [string]$Path="mypanel.csv") {
-  $qp = New-Object QualtricsPanel
-  for ($i = 0; $i -lt $Panelists; $i++)
-  { 
-      $qp.AddPanelist(($i+1).ToString(), (Get-RandomString 15))
-  }
-  $qp.Panel | Export-Csv -Path $Path -NoTypeInformation -Encoding UTF8
-  Write-Host "Panel file '$Path' created."
+  
+ .LINK
+  about_QualtricsPanel
+#> 
+    Param(
+        [Parameter(Position=0, Mandatory=$true)]
+        [int]$Panelists,
+        [Parameter(Position=1, Mandatory=$false)]
+        [string]$Path="AccessCodes.csv"
+        [Parameter(Position=1, Mandatory=$false)]
+        [string]$Delimiter=","
+    )
+  
+    $qualtricsPanel = New-Object QualtricsPanel
+    for ($i = 0; $i -lt $Panelists; $i++)
+    { 
+        $qualtricsPanel.AddPanelist(($i+1).ToString(), (Get-RandomString 15))
+    }
+    $qualtricsPanel.Panel | Export-Csv -Path $Path -Delimiter $Delimiter -NoTypeInformation -Encoding UTF8
+    Write-Host "Panel file '$Path' created at " (Get-ChildItem $Path).FullName
 }
 
-###############################################################################
+###################################################################################################
 <# 
  .SYNOPSIS 
   Create a code list
@@ -112,27 +133,34 @@ function New-QualtricsPanel([int]$Panelists=20, [string]$Path="mypanel.csv") {
  .DESCRIPTION
   Create a code list extracted from CSV with generated access links.
   
+ .PARAMETER Path
+  Specifies the path to the CSV file containing the access codes.
+ 
+ .PARAMETER Delimiter
+  Specifies the delimiter for Import-CSV
+  
  .EXAMPLE
   Get-CodesFromQualtricsPanel -Path mypanel.csv
 #>
 function Get-CodesFromQualtricsPanel([string]$Path, [string]$Delimiter=",") {
-  $qp = New-Object QualtricsPanel
-  $panelists = Import-Csv -Path $Path -Delimiter $Delimiter
-  foreach($p in $panelists) {
-    $ec = $p.'Last Name'
-    $ac = $qp.GetAccessCode($p.Link)
-    $link = $qp.GetAccessLink($p.Link)
-    $qp.AddCode($ac, $ec)
-  }
+    $qp = New-Object QualtricsPanel
+    $panelists = Import-Csv -Path $Path -Delimiter $Delimiter
+    foreach($p in $panelists) {
+        $ec = $p.'Last Name'
+        $ac = $qp.GetAccessCode($p.Link)
+        $link = $qp.GetAccessLink($p.Link)
+        $qp.AddCode($ac, $ec)
+    }
 
-  $codeFilePath = $Path.Replace(".csv", "-codes.csv")
-  $numCodes = $qp.Codes.Count
-  $qp.Codes | Export-Csv -Path $codeFilePath -NoTypeInformation -Encoding UTF8
-  Write-Output "Created codelist with $numCodes codes: '$codeFilePath'"
-  Write-Output "Link: $link"
+    $codeFilePath = $Path.Replace(".csv", "Codes.csv")
+    $numCodes = $qp.Codes.Count
+    $qp.Codes | Export-Csv -Path $codeFilePath -NoTypeInformation -Encoding UTF8
+    Write-Output "Created codelist with $numCodes codes: '$codeFilePath'"
+    Write-Output "Link: $link"
 }
 
-###############################################################################
+###################################################################################################
+function Get-RandomString  {
 <# 
  .SYNOPSIS 
   Get random string
@@ -143,16 +171,24 @@ function Get-CodesFromQualtricsPanel([string]$Path, [string]$Delimiter=",") {
  .EXAMPLE
   Get-RandomString 10
 #>
-function Get-RandomString([int]$length=15) {
-  $sourcedata = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"
-  for ($loop=1; $loop –le $length; $loop++) {
-    $pw+=($sourcedata | Get-Random)
-  }
-  return $pw
+  
+    Param(
+        [Parameter(Position=0, Mandatory=$false)]
+        [int]$Length=15
+    )
+  
+    $sourcedata = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"
+    for ($loop=1; $loop –le $length; $loop++) {
+        $password+=($sourcedata | Get-Random)
+    }
+    return $password
 }
 
 ###############################################################################
 # Some Types in C# to make life easier
+# - Panelist
+# - Code
+# - QualtricsPanel
 
 Add-Type -Language CSharp @"
 
