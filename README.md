@@ -28,12 +28,11 @@ Find some examples we have used in previous studies below. We recommend to add '
 - Panel design, repeated measurement with e-mail reminders
 - Scheduled pool recruitment for real-time games [in preparation]
 
-### 5. Advanced
+### 5. Miscellaneous
 
 - Hosting web assets (javascript, images) on DeSciL on-premises or cloud servers
-- Routing/Chaining of different treatments
-- JavaScript WebService for IAT (AJAX)
 - WebService Checkin/Checkout for real-time treatments
+- JavaScript WebService for IAT (AJAX)
 - Automatic data exports/transforms
 
 ### License
