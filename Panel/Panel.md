@@ -13,15 +13,30 @@ Prerequisite is a panel file (aka participant list with passwords) which needs 5
 ---
 
 ### 1. Download a PowerShell script
-     
-     $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Panel/QualtricsPanel.ps1"
-     iex ((new-object net.webclient).DownloadString($url))
-     
+
 Paste these two line of code in a PowerShell. This should give you access to 
 two functions:  `New-QualtricsPanel` and `Get-CodesFromQualtricsPanel`. 
 Type `help about_QualtricsPanel` for details.
+    
+     $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Panel/QualtricsPanel.ps1"
+     iex ((new-object net.webclient).DownloadString($url))
 
 ### 2. Create a list with exit codes (exit list)
+
+The function below will create a CSV File 
+
+     New-QualtricsPanel -Panelists 20 -Path "myPanel.csv"
+
+with the following format:
+
+| FirstName  | LastName | PrimaryEmail     | ExternalDataReference | ... |
+|----------- |:--------:|:----------------:|:---------------------:| ---:|
+| 1          | oqHh6... | info@nomail.com  | oqHh6FDxeSTRec3       | ... |
+| 2          | zZEPX... | info@nomail.com  | zZEPXySucUcmk2b       | ... |
+| ...        | ...      | ...              | ...                   | ... |
+
+The exit codes are now stored in the fields LastName and ExternalDataReference.
+You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control the flow of your survey (not displayed here). 
 
 ### 3. Upload exit codes into a Qualtrics panel
 
