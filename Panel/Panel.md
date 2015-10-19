@@ -20,6 +20,8 @@ Type `help about_QualtricsPanel` for details.
     
      $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Panel/QualtricsPanel.ps1"
      iex ((new-object net.webclient).DownloadString($url))
+     
+See script [QualtricsPanel.ps1](QualtricsPanel.ps1) for details what your downloading.
 
 ### 2. Create a list with exit codes (exit list)
 
@@ -67,8 +69,17 @@ codes and merge them into a DeSciL code file with the following function:
 
 This will generate the final code file "Survey1-Codes.csv" you have to submit to DeSciL staff.
 
+### 6. Dispay exit codes
+
+Turkers arrive on your survey with one of the lins in Survey1-AccessCodes.csv. At the end of 
+the survey you have to display a message on the check-out page that contains the exit code.
+
+- See file [Checkout](Checkout.md) for instructions to setup a 'Custom end of survey message'.
+  
+
+
 ### Misc
 
-- See script [QualtricsPanel.ps1](QualtricsPanel.ps1) for details how to create a panel.
-- See file [Checkout](Checkout.md) for instructions to setup a 'Custom end of survey message'.
+
+
 - See file Factorial (tba) for instructions to setup a panel with predefined factorial designs.
