@@ -94,7 +94,7 @@ function about_QualtricsPanel {}
  .EXAMPLE
   New-QualtricsPanel -Panelists 100 -Path mypanel.csv
 #>
-function New-QualticsPanel([int]$Panelists=20, [string]$Path="mypanel.csv") {
+function New-QualtricsPanel([int]$Panelists=20, [string]$Path="mypanel.csv") {
   $qp = New-Object QualtricsPanel
   for ($i = 0; $i -lt $Panelists; $i++)
   { 
