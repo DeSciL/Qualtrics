@@ -2,13 +2,14 @@
 
 Integration with Qualtrics is built on a simple code-sharing procedure. Respondents access the survey by click on a link. The link has an embedded access code (aka password). After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page. The worker has to transfer this exit code with copy & paste to Amazon Mechnical Turk. This procedure is very robust and easy to understand for turkers.
 
-Prerequisite is a panel file (aka participant list with passwords) which needs 5 steps to create:
+Prerequisite is a panel file (aka participant list with passwords) which needs 6 steps to create:
 
 1. Download our PowerShell script 
 2. Create a list with exit codes (exit list)
 3. Upload exit codes into a Qualtrics panel
 4. Link your survey to the panel and generate an access link list.
 5. Create the code list 
+6. Display exit codes
 
 ---
 
@@ -49,7 +50,7 @@ right side to create a new panel. Name the panel similar to your survey.
 Then click on 'Import From a File'. Click browse and choose your CSV file. 
 In the dialog 'Import/Update From a File' just click import.
 
-##°# 4. Link your survey to the panel and generate an access link list.
+#### 4. Link your survey to the panel and generate an access link list.
 
 In a fourth step, the survey must be linked to the panel. First select 
 your survey, go to 'Survey Options' (in the toolbar) and tick the option 
