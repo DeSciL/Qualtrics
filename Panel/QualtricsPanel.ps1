@@ -111,7 +111,7 @@ function New-QualtricsPanel {
         [Parameter(Position=0, Mandatory=$true)]
         [int]$Panelists,
         [Parameter(Position=1, Mandatory=$false)]
-        [string]$Path="AccessCodes.csv"
+        [string]$Path="AccessCodes.csv",
         [Parameter(Position=1, Mandatory=$false)]
         [string]$Delimiter=","
     )
@@ -126,6 +126,7 @@ function New-QualtricsPanel {
 }
 
 ###################################################################################################
+function Get-CodesFromQualtricsPanel {
 <# 
  .SYNOPSIS 
   Create a code list
@@ -141,8 +142,14 @@ function New-QualtricsPanel {
   
  .EXAMPLE
   Get-CodesFromQualtricsPanel -Path mypanel.csv
-#>
-function Get-CodesFromQualtricsPanel([string]$Path, [string]$Delimiter=",") {
+#> 
+    Param(
+        [Parameter(Position=0, Mandatory=$true)]
+        [string]$Path,
+        [Parameter(Position=0, Mandatory=$false)]
+        [string]$Delimiter = ","
+    )
+  
     $qp = New-Object QualtricsPanel
     $panelists = Import-Csv -Path $Path -Delimiter $Delimiter
     foreach($p in $panelists) {
@@ -184,7 +191,7 @@ function Get-RandomString  {
     return $password
 }
 
-###############################################################################
+###################################################################################################
 # Some Types in C# to make life easier
 # - Panelist
 # - Code
@@ -330,4 +337,4 @@ public class QualtricsPanel
 }
 "@
 
-###############################################################################
+###################################################################################################
