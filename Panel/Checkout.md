@@ -19,4 +19,4 @@ your template. Such a template could look like this:
      Your payment will be processed within the next 24 hours. 
      If you encounter problems submitting this HIT, please search 
      for a HIT called "ETH Descil Trouble Ticket" and report your 
-	 problem there.
+     problem there.
