@@ -29,26 +29,47 @@ The function below will create a CSV File
 
 with the following format:
 
-| FirstName  | LastName | PrimaryEmail     | ExternalDataReference | ... |
-|----------- |:--------:|:----------------:|:---------------------:| ---:|
-| 1          | oqHh6... | info@nomail.com  | oqHh6FDxeSTRec3       | ... |
-| 2          | zZEPX... | info@nomail.com  | zZEPXySucUcmk2b       | ... |
-| ...        | ...      | ...              | ...                   | ... |
+| FirstName  | LastName        | PrimaryEmail      | ExternalDataReference | ... |
+|----------- |:---------------:|:-----------------:|:---------------------:| ---:|
+| 1          | oqHh6FDxeSTRec3 | info@no-mail.com  | oqHh6FDxeSTRec3       | ... |
+| 2          | zZEPXySucUcmk2b | info@no-mail.com  | zZEPXySucUcmk2b       | ... |
+| ...        | ...             | ...               | ...                   | ... |
 
 The exit codes are now stored in the fields LastName and ExternalDataReference.
-You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control the flow of your survey (not displayed here). 
+You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control 
+the flow of your survey (not displayed here). 
 
 ### 3. Upload exit codes into a Qualtrics panel
 
+In a second step, this file must be imported into a new Qualtrics panel. 
+In Qualtrics click on the tab 'Panels'. Then click on the green button on the
+right side to create a new panel. Name the panel similar to your survey.
+Then click on 'Import From a File'. Click browse and choose your CSV file. 
+In the dialog 'Import/Update From a File' just click import.
+
 ### 4. Link your survey to the panel and generate an access link list.
 
+In the third step, the survey must be linked to the panel. First select 
+your survey, go to 'Survey Options' (in the toolbar) and tick the option 
+'By Invitation only' under 'Survey Protection'. Save Changes. Then click
+on the tab 'Distribute Survey' Activate your survey. Below the yellow box, 
+click on 'Generate Links'. Select the panel from your library, and 'Select 
+Entire Panel'. Then click on 'Generate Links'. This will generate a 
+downloadable CSV that contains the survey access links. Rename this file
+to 'MyPanelLinks.csv'.
+
 ### 5. Create the code list
+
+In step four, you have to extract the access codes (passwords) and exit 
+codes and merge them into a DeSciL code file with the following function:
+
+     Get-CodesFromQualtricsPanel -Path "MyPanelLinks.csv"
+
+This will generate the final code file (MyPanelLinks-Codes.csv) 
+you have to submit to DeSciL staff.
 
 ### Misc
 
 - See script [QualtricsPanel.ps1](QualtricsPanel.ps1) for details how to create a panel.
 - See file [Checkout](Checkout.md) for instructions to setup a 'Custom end of survey message'.
-- See file Factorial (tba) for instructions to setup a panel with predefined factorial designs
-
-
-
+- See file Factorial (tba) for instructions to setup a panel with predefined factorial designs.
