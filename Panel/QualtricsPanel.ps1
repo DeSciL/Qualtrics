@@ -191,6 +191,7 @@ function Get-CodesFromQualtricsPanel {
 
     $numCodes = $qualtricsPanel.Codes.Count
     $qualtricsPanel.Codes | Export-Csv -Path $OutPath -NoTypeInformation -Encoding UTF8
+    Write-Output
     Write-Output "Created codelist with $numCodes codes: '$codeFilePath'"
     Write-Output "Access Link: $link"
 }
