@@ -32,11 +32,11 @@ The function below will create a CSV File for a HIT called 'Survey1'.
 
 with the following format:
 
-| FirstName  | LastName        | PrimaryEmail      | ExternalDataReference | ... |
-|----------- |:---------------:|:-----------------:|:---------------------:| ---:|
-| 1          | oqHh6FDxeSTRec3 | info@no-mail.com  | oqHh6FDxeSTRec3       | ... |
-| 2          | zZEPXySucUcmk2b | info@no-mail.com  | zZEPXySucUcmk2b       | ... |
-| ...        | ...             | ...               | ...                   | ... |
+| FirstName  | LastName        | PrimaryEmail        | ExternalDataReference | ... |
+|----------- |:---------------:|:-------------------:|:---------------------:| ---:|
+| 1          | oqHh6FDxeSTRec3 | info-1@no-mail.com  | oqHh6FDxeSTRec3       | ... |
+| 2          | zZEPXySucUcmk2b | info-2@no-mail.com  | zZEPXySucUcmk2b       | ... |
+| ...        | ...             | ...                 | ...                   | ... |
 
 The exit codes are now stored in the fields LastName and ExternalDataReference.
 Note: You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control 
@@ -60,6 +60,12 @@ click on 'Generate Links'. Select the panel from your library, and 'Select
 Entire Panel'. Then click on 'Generate Links'. This will generate a 
 downloadable CSV that contains the survey access links. Rename this file
 to 'Survey1-AccessCodes.csv'.
+
+The CSV  following format:
+
+     Response ID,Last Name,First Name,External Data Reference,Email,Status,End Date,Link
+     ,oqHh6FDxeSTRec3,1,oqHh6FDxeSTRec3,info-1@no-mail.com,Email not sent yet,,https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_9LhzQEynM9hxafP&Q_CHL=gl
+     ,zZEPXySucUcmk2b,2,zZEPXySucUcmk2b,info-2@no-mail.com,Email not sent yet,,https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_8v2pKycBjrB60e1&Q_CHL=gl
 
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
