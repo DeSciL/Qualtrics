@@ -7,8 +7,8 @@ Prerequisite is a panel file (aka participant list with passwords) which needs 6
 1. Download our PowerShell script 
 2. Create a list with exit codes (exit list)
 3. Upload exit codes into a Qualtrics panel
-4. Link your survey to the panel and generate an access link list.
-5. Create the code list 
+4. Link your survey to the panel and generate unique survey links
+5. Create the final code list 
 6. Display exit codes
 
 ---
@@ -16,13 +16,14 @@ Prerequisite is a panel file (aka participant list with passwords) which needs 6
 #### 1. Download a PowerShell script
 
 Paste these two line of code in a PowerShell. This should give you access to 
-two functions:  `New-QualtricsPanel` and `Get-CodesFromQualtricsPanel`. 
+some functions:  `New-QualtricsPanel` and `Get-CodesFromQualtricsPanel`. 
 Type `help about_QualtricsPanel` for details.
     
      $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Panel/QualtricsPanel.ps1"
      iex ((new-object net.webclient).DownloadString($url))
      
-See script [QualtricsPanel.ps1](QualtricsPanel.ps1) for details what your downloading.
+Notes:
+- See script [QualtricsPanel.ps1](QualtricsPanel.ps1) for details.
 
 #### 2. Create a list with exit codes (exit list)
 
@@ -50,7 +51,7 @@ right side to create a new panel. Name the panel similar to your survey.
 Then click on 'Import From a File'. Click browse and choose your CSV file. 
 In the dialog 'Import/Update From a File' just click import.
 
-#### 4. Link your survey to the panel and generate an access link list.
+#### 4. Link your survey to the panel and generate unique survey links
 
 In a fourth step, the survey must be linked to the panel. First select 
 your survey, go to 'Survey Options' (in the toolbar) and tick the option 
@@ -73,14 +74,14 @@ Access codes will be extracted from the links. The part behind the segment `_MLR
 Notes:
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
-#### 5. Create the code list
+#### 5. Create the final code list
 
 In step five, you have to extract the access codes (passwords) and exit 
 codes and merge them into a DeSciL code file with the following function:
 
      Get-CodesFromQualtricsPanel -Path "Survey1-AccessCodes.csv"
 
-This will generate the final code file "Survey1-Codes.csv" you have to submit to DeSciL staff.
+This will generate the final code file "Survey1-Codes.csv" which you have to submit to DeSciL staff.
 It should have the following format:
 
 |AccessCode      | ExitCode        | Id |
@@ -89,9 +90,17 @@ It should have the following format:
 |8v2pKycBjrB60e1 | zZEPXySucUcmk2b |    |
 |...             | ...             |    |
 
+Notes:
+- Submit codes via WebApi (tbd)
+
 #### 6. Dispay exit codes
 
 Turkers arrive on your survey with one of the links in Survey1-AccessCodes.csv. At the end of 
 the survey you have to display a message that contains the corresponding exit code.
 
 - See file [Checkout](Checkout.md) for instructions to setup a 'Custom end of survey message'.
+
+#### 7. Misc
+
+Contact DeSciL staff for fully unattended code exchange via WebService calls. This makes only
+sense, however, if you have a high number surveys to deploy.
