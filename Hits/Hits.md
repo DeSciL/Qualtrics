@@ -10,7 +10,7 @@ or their history of completed HITs. Finally, detailed instructions can be provid
 To run your HITs, DesciL staff expects a set these files which specifiy your HIT. Let's call the HIT `Study1`.
 
 1. `Study1-HITDefinition.json`: A key-value paired list of HIT properties.
-2. `Study1-HITInstructions.txt`: A HTML-Fragment gives detailed information and instructions to the worker.
+2. `Study1-HITInstructions.html`: A HTML-Fragment gives detailed information and instructions to the worker.
 3. `Study1-Codes.csv`: A CSV file with access and exit codes where the former protects your survey and latter proves task completion for the worker. 
 
 ---
