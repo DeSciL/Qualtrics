@@ -40,8 +40,9 @@ with the following format:
 | ...        | ...             | ...                 | ...                   | ... |
 
 The exit codes are now stored in the fields LastName and ExternalDataReference.
-Note: You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control 
-the flow of your survey. 
+
+Notes: 
+- You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control the flow of your survey. 
 
 #### 3. Upload exit codes into a Qualtrics panel
 
@@ -58,8 +59,8 @@ your survey, go to 'Survey Options' (in the toolbar) and tick the option
 'By Invitation only' under 'Survey Protection'. Save Changes. Then click
 on the tab 'Distribute Survey' Activate your survey. Below the yellow box, 
 click on 'Generate Links'. Select the panel from your library, and 'Select 
-Entire Panel'. Then click on 'Generate Links'. This will generate a 
-downloadable CSV that contains the survey access links. Rename this file
+Entire Panel'. Then click on 'Generate Links'. See link under Notes for screenshots where to find it.
+This will generate a downloadable CSV that contains the survey access links. Rename this file
 to 'Survey1-AccessCodes.csv'.
 
 The CSV sould have the following format:
