@@ -30,17 +30,6 @@
   You can type 'help funcName' for detailed help on one of functions.
   Type 'help about_QualtricsPanelSetup' for detailed steps.
   
- .EXAMPLE
-  help about_QualtricsPanelSetup
-  
-  Displays detailed instructions for the panel setup.
-  
- .EXAMPLE
-  New-QualtricsPanel -Panelists 100 -Path Study1-ExitCodes.csv
-  
- .EXAMPLE
-  Get-CodesFromQualtricsPanel -Path Study1-AccessCodes.csv -OutPath Study1-Codes.csv
-  
  .LINK
   https://github.com/descil/qualtrics
 
@@ -48,7 +37,7 @@
 function about_QualtricsPanel {}
 
 # Call this function on load!
-help about_QualtricsPanel -Detailed
+help about_QualtricsPanel
 
 ###################################################################################################
 <# 
