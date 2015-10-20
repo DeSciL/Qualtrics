@@ -61,13 +61,14 @@ Entire Panel'. Then click on 'Generate Links'. This will generate a
 downloadable CSV that contains the survey access links. Rename this file
 to 'Survey1-AccessCodes.csv'.
 
-The CSV  following format:
+The CSV sould have the following format:
 
 |ResponseID|Last Name      | First Name |External Data Reference| Email            | Status           | End Date |Link                                                                                        |
 |----------|:-------------:|:----------:|:---------------------:|:----------------:|:----------------:|:--------:|-------------------------------------------------------------------------------------------:|
 |          |oqHh6FDxeSTRec3| 1          | oqHh6FDxeSTRec3       |info-1@no-mail.com|Email not sent yet|          | https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_9LhzQEynM9hxafP&Q_CHL=gl|
 |          |zZEPXySucUcmk2b| 2          | zZEPXySucUcmk2b       |info-2@no-mail.com|Email not sent yet|          | https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_8v2pKycBjrB60e1&Q_CHL=gl|
 
+Notes:
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
 #### 5. Create the code list
@@ -78,6 +79,13 @@ codes and merge them into a DeSciL code file with the following function:
      Get-CodesFromQualtricsPanel -Path "Survey1-AccessCodes.csv"
 
 This will generate the final code file "Survey1-Codes.csv" you have to submit to DeSciL staff.
+It should have the following format.
+
+|AccessCode      | ExitCode        | Id |
+|----------------|-----------------|----|
+|9LhzQEynM9hxafP | oqHh6FDxeSTRec3 |    |
+|8v2pKycBjrB60e1 | zZEPXySucUcmk2b |    |
+|...             | ...             |    |
 
 #### 6. Dispay exit codes
 
