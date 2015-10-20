@@ -14,4 +14,4 @@ Priority 2
 - Add example for web asset hosting
 - Add example for Descil AMT WebService / Hooks
 - Include the IAT sample under Misc
-- 
+- Provide solution to transfer data based on base64.
