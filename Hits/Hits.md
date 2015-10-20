@@ -7,14 +7,11 @@ discoverable on Mturk, and specifies its lifetime (title, description, keyworkds
 HIT Qualifications can be added to restrict access based on turker's attributes 
 or their history of completed HITs. Finally, detailed instructions can be provided.
 
-To run your HITs, DesciL staff expects a set of files which specifiy your HIT, 
-call it `Study1`.
+To run your HITs, DesciL staff expects a set these files which specifiy your HIT. Let's call the HIT `Study1`.
 
 1. `Study1-HITDefinition.json`: A key-value paired list of HIT properties.
 2. `Study1-HITInstructions.txt`: A HTML-Fragment gives detailed information and instructions to the worker.
 3. `Study1-Codes.csv`: A CSV file with access and exit codes where the former protects your survey and latter proves task completion for the worker. 
-
-These three files define the HIT exhaustively.
 
 ---
 
@@ -37,7 +34,8 @@ The simplest way to create a HIT definition is to modify the file with a text ed
 A full and annotated version of the HIT definition is [HitDefinition.json](HitDefinition.json), the minimal version is here: [HitDefinition-Mini.json](HitDefinition-Mini.json). Additionally, 
 the following PowerShell script [HitDefinition.ps1](HitDefinition.ps1) might help to create, validate, and submit your definition. It can be sourced directly with:
 
-     $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/HitDefinition.ps1"
+     # Copy this to PowerShell
+     $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Hits/HitDefinition.ps1"
 	 iex ((new-object net.webclient).DownloadString($url))
      help about_HITDefinition
 
@@ -56,9 +54,4 @@ On the HIT previw page on Mturk we display your `<div />`. Instructions will be 
 
 #### 3. Code Sharing
 
-See the [panel setup](../Panel/Panel.md) for (3).
-
----
-- See file [HitDefinition.json](HitDefinition.json) for details.
-- See script [HitDefinition.ps1](HitDefinition.ps1) to process definition files.
-
+See [Panel Setup](../Panel/Panel.md).

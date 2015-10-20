@@ -8,7 +8,7 @@ Running a surveys on Mturk can easily be accomplished with a panel in Qualtrics.
 
 - See [Panel](Panel/Panel.md) for more details. 
 
-### 2. Mturk HIT Definitions
+### 2. Mturk HIT Definition
 
 The HIT definition assembles all required information to upload a HIT to Mturk, like title, description, reward, and number of assignments. The HIT definition can be submitted as a JSON file.  
 
