@@ -17,17 +17,29 @@
   Utils to setup a Qualtrics Panel
 
  .DESCRIPTION
-  This script contains four functions that may be helpful in creating
+  This script contains five functions that may be helpful in creating
   a code list based on a Qualtrics panel. The following functions are
-  implemented
+  implemented:
   
-  - about_QualtricsPanel: This help file
-  - about_QualtricsPanelSetup: List of required steps
-  - New-QualtricsPanel: Create "exit code" list
+  - about_QualtricsPanel:        This help file
+  - about_QualtricsPanelSetup:   List of required steps
+  - New-QualtricsPanel:          Create "exit code" list
   - Get-CodesFromQualtricsPanel: Create code list
-  - Get-RandomString: Creates passwords (internal)
+  - Get-RandomString:            Creates passwords (internal)
   
-  You can type 'help funcName' for detailed help of the functions.
+  You can type 'help funcName' for detailed help on one of functions.
+  Type 'help about_QualtricsPanelSetup' for detailed steps.
+  
+ .EXAMPLE
+  help about_QualtricsPanelSetup
+  
+  Displays detailed instructions for the panel setup.
+  
+ .EXAMPLE
+  New-QualtricsPanel -Panelists 100 -Path Study1-ExitCodes.csv
+  
+ .EXAMPLE
+  Get-CodesFromQualtricsPanel -Path Study1-AccessCodes.csv -OutPath Study1-Codes.csv
   
  .LINK
   https://github.com/descil/qualtrics
