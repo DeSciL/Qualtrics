@@ -48,7 +48,7 @@
 function about_QualtricsPanel {}
 
 # Call this function on load!
-help about_QualtricsPanel
+help about_QualtricsPanel -Detailed
 
 ###################################################################################################
 <# 
