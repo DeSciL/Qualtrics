@@ -10,9 +10,35 @@
 # Source directly from Github into PowerShell:
 # $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Panel/QualtricsPanel.ps1"
 # iex ((new-object net.webclient).DownloadString($url))
-
-# For getting help, type the following into the PowerShell cosole:
 # help about_QualtricsPanel
+# For getting help, type the following into the PowerShell cosole:
+
+###################################################################################################
+<# 
+ .SYNOPSIS 
+  Utils to setup a Qualtrics Panel
+
+ .DESCRIPTION
+  This script contains four functions that may be helpful in creating
+  a code list based on a Qualtrics panel. The following functions are
+  implemented
+  
+  - about_QualtricsPanel: This help file
+  - about_QualtricsPanelSetup: List of required steps
+  - New-QualtricsPanel: Create "exit code" list
+  - Get-CodesFromQualtricsPanel: Create code list
+  - Get-RandomString: Creates passwords (internal)
+  
+  You can type 'help funcName' for detailed help of the functions.
+  
+ .LINK
+  https://github.com/descil/qualtrics
+
+#>
+function about_QualtricsPanel {}
+
+# Call this function on load!
+help about_QualtricsPanel
 
 ###################################################################################################
 <# 
@@ -73,7 +99,7 @@
   'Survey Options' > section 'Survey Termination' by ticking the option 
   'Custom end of survey message' and selecting your template.  
 #>
-function about_QualtricsPanel {}
+function about_QualtricsPanelSetup {}
 
 ###################################################################################################
 function New-QualtricsPanel {
