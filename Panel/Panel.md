@@ -68,6 +68,8 @@ The CSV sould have the following format:
 |          |oqHh6FDxeSTRec3| 1          | oqHh6FDxeSTRec3       |info-1@no-mail.com|Email not sent yet|          | https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_9LhzQEynM9hxafP&Q_CHL=gl|
 |          |zZEPXySucUcmk2b| 2          | zZEPXySucUcmk2b       |info-2@no-mail.com|Email not sent yet|          | https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_8v2pKycBjrB60e1&Q_CHL=gl|
 
+Access codes will be extracted from the links. The part behind the segment `_MLRP_` is the access code.
+
 Notes:
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
@@ -79,7 +81,7 @@ codes and merge them into a DeSciL code file with the following function:
      Get-CodesFromQualtricsPanel -Path "Survey1-AccessCodes.csv"
 
 This will generate the final code file "Survey1-Codes.csv" you have to submit to DeSciL staff.
-It should have the following format.
+It should have the following format:
 
 |AccessCode      | ExitCode        | Id |
 |----------------|-----------------|----|
