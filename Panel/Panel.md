@@ -61,6 +61,8 @@ Entire Panel'. Then click on 'Generate Links'. This will generate a
 downloadable CSV that contains the survey access links. Rename this file
 to 'Survey1-AccessCodes.csv'.
 
+- [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
+
 #### 5. Create the code list
 
 In step five, you have to extract the access codes (passwords) and exit 
