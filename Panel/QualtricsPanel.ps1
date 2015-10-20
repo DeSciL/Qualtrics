@@ -10,8 +10,6 @@
 # Source directly from Github into PowerShell:
 # $url = "https://raw.githubusercontent.com/DeSciL/Qualtrics/master/Panel/QualtricsPanel.ps1"
 # iex ((new-object net.webclient).DownloadString($url))
-# help about_QualtricsPanel
-# For getting help, type the following into the PowerShell cosole:
 
 ###################################################################################################
 <# 
