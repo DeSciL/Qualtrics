@@ -222,7 +222,7 @@ public class Panelist
     {
         FirstName = firstName;
         LastName = lastName;
-        PrimaryEmail = "info@no-mail.com";
+        PrimaryEmail = "info-" + firstName + "@no-mail.com";
         ExternalDataReference = lastName;
     }
 }
