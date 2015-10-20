@@ -31,13 +31,13 @@ We post HITs with command line tools (PsAmt) against the Amazon Mechanical Turk 
 - DeSciL pool recruitment to speed up data colletion time
 - Scheduled pool recruitment for real-time games [in beta]
 
-### 5. Miscellaneous
+### 5. Integration
 
-- Hosting [web assets](Misc/Hosting.md) (javascript, images) on DeSciL on-premises or cloud servers
-- [WebService](Misc/WebService.md) Checkin/Checkout for real-time treatments
-- PHP Scripts for [Factorial Surveys](Misc/Factorial/)
+- [WebService](Integration/WebService.md) Checkin/Checkout for real-time treatments
+- Hosting [web assets](Integration/Hosting.md) (javascript, images) on DeSciL on-premises or cloud servers
+- PHP Scripts for [Factorial Surveys](Integration/Factorial/)
 - JavaScript WebService for IAT (AJAX) [in beta]
-- [Faq](Misc/Faq.md)
+- [Faq](Integration/Faq.md)
 
 ### License
 
