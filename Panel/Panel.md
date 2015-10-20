@@ -63,9 +63,9 @@ to 'Survey1-AccessCodes.csv'.
 
 The CSV  following format:
 
-     Response ID,Last Name,First Name,External Data Reference,Email,Status,End Date,Link
-     ,oqHh6FDxeSTRec3,1,oqHh6FDxeSTRec3,info-1@no-mail.com,Email not sent yet,,https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_9LhzQEynM9hxafP&Q_CHL=gl
-     ,zZEPXySucUcmk2b,2,zZEPXySucUcmk2b,info-2@no-mail.com,Email not sent yet,,https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_8v2pKycBjrB60e1&Q_CHL=gl
+     |Response ID|Last Name|First Name|External Data Reference|Email|Status|End Date|Link
+     | |oqHh6FDxeSTRec3|1|oqHh6FDxeSTRec3|info-1@no-mail.com|Email not sent yet| | https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_9LhzQEynM9hxafP&Q_CHL=gl
+     | |zZEPXySucUcmk2b|2|zZEPXySucUcmk2b|info-2@no-mail.com|Email not sent yet| | https://qualtrics.com/SE?Q_DL=d5U5xtya6O4qRsx_bJCd470RvVdYdtq_MLRP_8v2pKycBjrB60e1&Q_CHL=gl
 
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
