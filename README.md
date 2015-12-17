@@ -1,7 +1,7 @@
 # Qualtrics
 
 Setup Qualtrics for surveys and experiments in the lab and on Amazon Mechanical Turk. 
-This is preliminary material. Please help us to improve these documentation.
+This is preliminary material. Please help us to improve this documentation.
 
 ### 1. Panel Setup
 
