@@ -1,22 +1,24 @@
 # Qualtrics Panels
 
-Integration with Qualtrics is built on a simple code-sharing procedure. Respondents access the survey by click on a link. The link has an embedded access code (aka password):
+Integration with Qualtrics is built on a simple code-sharing procedure. Respondents access the survey by click on a link. 
+We start your survey in a new tab and ask turkers to keep the Mturk browser tab open.The link has an embedded `access code` (aka password):
 
      https://qualtrics.com/SE?Q_CHL=gl&Q_DL=xxxxxxxxxxxxxxx_yyyyyyyyyyyyyyy_MLRP_#accessCode#
      
 After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page. 
-The worker has to transfer this exit code with copy & paste to Amazon Mechnical Turk. 
-This procedure turned out to be very robust and easy to understand for turkers.
-In the following, we describe how we setup our panel files. However, this can also be done manually without the scripts we provide. 
+The worker has to transfer this exit code with copy & paste back to Amazon Mechnical Turk. 
+This procedure is not very sophisticated. However, it turned out to be very robust and easy to understand for turkers.
+In the following, we describe how we setup our panel files. Of course, this can also be done manually without the scripts we provide. 
 
 Prerequisite is a panel file (aka participant list with passwords) which needs 6 steps to create:
 
 1. Download our PowerShell script 
 2. Create a list with exit codes (exit list)
 3. Upload exit codes into a Qualtrics panel
-4. Link your survey to the panel and generate unique survey links
+4. Link your survey to the panel and generate unique survey links (access codes)
 5. Create the final code list 
 6. Display exit codes
+7. Submit the list to DeSciL Staff
 
 ---
 
@@ -82,7 +84,14 @@ Access codes will be extracted from the links. The part behind the segment `_MLR
 Notes:
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
-#### 5. Create the final code list
+#### 5. Dispay exit codes
+
+Turkers arrive on your survey with one of the links in Survey1-AccessCodes.csv. At the end of 
+the survey you have to display a message that contains the corresponding exit code.
+
+- See the file [Checkout](Checkout.md) for instructions on how to setup a 'Custom end of survey message'.
+
+#### 6. Create the final code list
 
 In step five, you have to extract the access codes (passwords) and exit 
 codes and merge them into a DeSciL code file with the following function:
@@ -99,14 +108,9 @@ It should have the following format:
 |...             | ...             |
 
 
-#### 6. Dispay exit codes
+#### 7. Submit
 
-Turkers arrive on your survey with one of the links in Survey1-AccessCodes.csv. At the end of 
-the survey you have to display a message that contains the corresponding exit code.
+Submit the codelist together with the HIT Ticket to DeSciL Staff
 
-- See the file [Checkout](Checkout.md) for instructions on how to setup a 'Custom end of survey message'.
-
-#### 7. Misc
-
-Contact DeSciL staff for fully unattended code exchange via WebService calls. This makes only
-sense, however, if you have a high number surveys to deploy or if you do real-time gaming.
+Contact DeSciL staff for fully unattended code exchange via WebService calls. However, this makes only
+sense, if you have a high number surveys to deploy or if you do real-time gaming.
