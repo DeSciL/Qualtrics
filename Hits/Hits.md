@@ -7,13 +7,11 @@ discoverable on Mturk, and specifies its lifetime (title, description, keyworkds
 HIT Qualifications can be added to restrict access based on turker's attributes 
 or their history of completed HITs. Finally, detailed instructions can be provided.
 
-To run your HITs, DesciL staff expects a set these files which specifiy your HIT. Let's call the HIT `Study1`.
+To run your HITs, DeSciL staff expects a set of files which specifiy your HIT. Let's call the HIT `Study1`.
 
 1. `Study1-HITDefinition.json`: A key-value paired list of HIT properties.
 2. `Study1-HITInstructions.html`: A HTML-Fragment gives detailed information and instructions to the worker.
 3. `Study1-Codes.csv`: A CSV file with access and exit codes where the former protects your survey and latter proves task completion for the worker. 
-
-
 
 ---
 
@@ -43,7 +41,8 @@ the following PowerShell script [HitDefinition.ps1](HitDefinition.ps1) might hel
 
 #### 2. HIT Instructions
 
-On the HIT previw page on Mturk we display your `<div />`. Instructions will be rendered with [twitter boostrap](http://getbootstrap.com/). 
+On the HIT previw page on Mturk we display your `<div />`. These instructions are displayed before the turker accept the HIT and helps him to decide if he is eligible to perform the task.
+Instructions will be rendered with [twitter boostrap](http://getbootstrap.com/). 
 
      <div>
 		<p><b>Purpose of the study:</b> To understand decision making processes</p> 
@@ -65,15 +64,15 @@ Access is typically controlled with Mturk qualifications. First of all, there ar
 - Masters, Worker_Adult (restrict to professionals)
 
 Additionally, we can setup our own qualifications based on explicit qualification tests or data from previous encounters.
-We could, for example, exclude all turkers who have participated in a similiar study or who have completed the HITs too fast. 
+We could, for example, exclude all turkers who have participated in a similiar study or who have completed previous HITs too fast. 
 On the other hand, we can explicitly include turkers and only grant access if they have participated in a previous measurement wave. 
 
-- Exclude Qualification
-- Include Qualification
+- Private Exclude Qualification
+- Private Include Qualification
 
 Finally, we maintain a very small profile of demographic variables on the majority of workers who have completed our HITs. 
 This allows basic forms of quota sampling and preconfigured interactions based on socio-demographics. 
-Please discuss all questions regarding sampling with DeSciL staff.
+Please discuss all questions regarding sampling with DeSciL staff in due time.
 
 #### 4. Code Sharing
 

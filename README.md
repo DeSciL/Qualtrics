@@ -1,10 +1,14 @@
 # Qualtrics
 
-Setup Qualtrics for surveys and experiments in the lab and on Amazon Mechanical Turk.
+Setup Qualtrics for surveys and experiments in the lab and on Amazon Mechanical Turk. 
+This is preliminary material. Please help us to improve these documentation.
 
 ### 1. Panel Setup
 
-Running a surveys on Mturk can easily be accomplished with a panel in Qualtrics. A panel is essentially an address list that stores passwords and redemption codes. Turkers access the survey with personalized links and have to copy/paste the redemption code from the last survey page back to Mturk. From the panel, finally, one can compile a code list which has to be submitted to DeSciL staff.
+Running surveys on Mturk can easily be accomplished with a panel in Qualtrics. 
+A panel is essentially an address list that stores passwords and redemption codes. 
+Turkers access the survey with personalized links and have to copy/paste the redemption code from the last survey page back to Mturk. 
+This panel file has to be submitted to DeSciL staff.
 
 - See [Panel](Panel/Panel.md) for more details. 
 
@@ -33,10 +37,10 @@ We post HITs with command line tools (PsAmt) against the Amazon Mechanical Turk 
 
 ### 5. Integration
 
-- [WebService](Integration/WebService.md) Checkin/Checkout for real-time treatments
+- [WebService](Integration/Integration.md) Checkin/Checkout for real-time treatments
 - Hosting [web assets](Integration/Hosting.md) (javascript, images) on DeSciL on-premises or cloud servers
 - PHP Scripts for [Factorial Surveys](Integration/Factorial/)
-- JavaScript WebService for IAT (AJAX) [in beta]
+- JavaScript WebService for implicit association tests / IAT (AJAX based) [in beta]
 
 ### License
 

@@ -5,7 +5,7 @@ We start your survey in a new tab and ask turkers to keep the Mturk browser tab 
 
      https://qualtrics.com/SE?Q_CHL=gl&Q_DL=xxxxxxxxxxxxxxx_yyyyyyyyyyyyyyy_MLRP_#accessCode#
      
-After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page. 
+After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page of your survey. 
 The worker has to transfer this exit code with copy & paste back to Amazon Mechnical Turk. 
 This procedure is not very sophisticated. However, it turned out to be very robust and easy to understand for turkers.
 In the following, we describe how we setup our panel files. Of course, this can also be done manually without the scripts we provide. 
@@ -50,8 +50,9 @@ with the following format:
 
 The exit codes are now stored in the fields LastName and ExternalDataReference.
 
-Notes: 
-- You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control the flow of your survey. 
+Note: 
+- You can add additional panel variable as EmbeddedDataA-EmbeddedDataZ to control the flow of your survey, 
+i.e., you can show or hide survey questions or pages based values you specify in the panel file.
 
 #### 3. Upload exit codes into a Qualtrics panel
 
@@ -69,10 +70,10 @@ your survey, go to 'Survey Options' (in the toolbar) and tick the option
 on the tab 'Distribute Survey' Activate your survey. Below the yellow box, 
 click on 'Generate Links'. Select the panel from your library, and 'Select 
 Entire Panel'. Then click on 'Generate Links'. See link under Notes for screenshots where to find it.
-This will generate a downloadable CSV that contains the survey access links. Rename this file
+This will generate a downloadable CSV file that contains the survey access links. Rename this file
 to 'Survey1-AccessCodes.csv'.
 
-The CSV sould have the following format:
+The CSV file sould have the following format:
 
 |ResponseID|Last Name      | First Name |External Data Reference| Email            | Status           | End Date |Link                                                                                        |
 |----------|:-------------:|:----------:|:---------------------:|:----------------:|:----------------:|:--------:|-------------------------------------------------------------------------------------------:|
@@ -110,7 +111,7 @@ It should have the following format:
 
 #### 7. Submit
 
-Submit the codelist together with the HIT Ticket to DeSciL Staff
+Just submit the codelist together with the HIT Ticket to DeSciL Staff and we are ready to run your survey within 24-48 hours.
 
 Contact DeSciL staff for fully unattended code exchange via WebService calls. However, this makes only
 sense, if you have a high number surveys to deploy or if you do real-time gaming.
