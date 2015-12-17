@@ -1,6 +1,13 @@
 # Qualtrics Panels
 
-Integration with Qualtrics is built on a simple code-sharing procedure. Respondents access the survey by click on a link. The link has an embedded access code (aka password). After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page. The worker has to transfer this exit code with copy & paste to Amazon Mechnical Turk. This procedure is very robust and easy to understand for turkers.
+Integration with Qualtrics is built on a simple code-sharing procedure. Respondents access the survey by click on a link. The link has an embedded access code (aka password):
+
+     https://qualtrics.com/SE?Q_CHL=gl&Q_DL=xxxxxxxxxxxxxxx_yyyyyyyyyyyyyyy_MLRP_#accessCode#
+     
+After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page. 
+The worker has to transfer this exit code with copy & paste to Amazon Mechnical Turk. 
+This procedure turned out to be very robust and easy to understand for turkers.
+In the following, we describe how we setup our panel files. However, this can also be done manually without the scripts we provide. 
 
 Prerequisite is a panel file (aka participant list with passwords) which needs 6 steps to create:
 
@@ -85,23 +92,21 @@ codes and merge them into a DeSciL code file with the following function:
 This will generate the final code file "Survey1-Codes.csv" which you have to submit to DeSciL staff.
 It should have the following format:
 
-|AccessCode      | ExitCode        | Id |
-|----------------|-----------------|----|
-|9LhzQEynM9hxafP | oqHh6FDxeSTRec3 |    |
-|8v2pKycBjrB60e1 | zZEPXySucUcmk2b |    |
-|...             | ...             |    |
+|AccessCode      | ExitCode        |
+|----------------|-----------------|
+|9LhzQEynM9hxafP | oqHh6FDxeSTRec3 |
+|8v2pKycBjrB60e1 | zZEPXySucUcmk2b |
+|...             | ...             |
 
-Notes:
-- Submit codes via WebApi (tbd)
 
 #### 6. Dispay exit codes
 
 Turkers arrive on your survey with one of the links in Survey1-AccessCodes.csv. At the end of 
 the survey you have to display a message that contains the corresponding exit code.
 
-- See file [Checkout](Checkout.md) for instructions to setup a 'Custom end of survey message'.
+- See the file [Checkout](Checkout.md) for instructions on how to setup a 'Custom end of survey message'.
 
 #### 7. Misc
 
 Contact DeSciL staff for fully unattended code exchange via WebService calls. This makes only
-sense, however, if you have a high number surveys to deploy.
+sense, however, if you have a high number surveys to deploy or if you do real-time gaming.
