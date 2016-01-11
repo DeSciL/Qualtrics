@@ -175,10 +175,19 @@ function Get-CodesFromQualtricsPanel {
         [Parameter(Position=0, Mandatory=$true)]
         [string]$Path,
         [Parameter(Position=1, Mandatory=$false)]
-        [string]$OutPath = $Path.Replace(".csv", "-Codes.csv"),
+        [string]$OutPath,
         [Parameter(Position=2, Mandatory=$false)]
         [string]$Delimiter = ","
     )
+    
+    if($OutPath.Length -eq 0) {
+        $OutPath = $Path
+        if($OutPath.IndexOf("AccessCodes.csv") -gt 0) {
+            $OutPath = $OutPath.Replace("AccessCodes.csv", "Codes.csv")
+        } else {
+            $OutPath = $OutPath.Replace(".csv", "-Codes.csv")
+        }
+    }
   
     $qualtricsPanel = New-Object QualtricsPanel
     $panelists = Import-Csv -Path $Path -Delimiter $Delimiter
@@ -188,12 +197,20 @@ function Get-CodesFromQualtricsPanel {
         $link = $qualtricsPanel.GetAccessLink($p.Link)
         $qualtricsPanel.AddCode($accessCode, $exitCode)
     }
-
+    
     $numCodes = $qualtricsPanel.Codes.Count
     $qualtricsPanel.Codes | Export-Csv -Path $OutPath -NoTypeInformation -Encoding UTF8
-    Write-Output
-    Write-Output "Created codelist with $numCodes codes: '$codeFilePath'"
-    Write-Output "Access Link: $link"
+    $link = $link + "#accessCode#"
+    $linkFilePath = $OutPath.Replace("Codes.csv", "Link.txt")  
+    $link | Out-File -FilePath $linkFilePath
+    Write-Host
+    Write-Host "Panel procedure complete:"
+    Write-Host
+    Write-Host "- Created codelist file with $numCodes codes in file: '$OutPath'"
+    Write-Host "- Created file with access link: $linkFilePath"
+    Write-Host " " $link
+    Write-Host
+    Write-Host
 }
 
 ###################################################################################################
