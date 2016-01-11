@@ -3,7 +3,7 @@
 Integration with Qualtrics is built on a simple code-sharing procedure. Respondents access the survey by click on a link. 
 We start your survey in a new tab and ask turkers to keep the Mturk browser tab open.The link has an embedded `access code` (aka password):
 
-     https://qualtrics.com/SE?Q_CHL=gl&Q_DL=xxxxxxxxxxxxxxx_yyyyyyyyyyyyyyy_MLRP_#accessCode#
+     https://qualtrics.com/SE?Q_CHL=gl&Q_DL=xxxxxxxxxxxxxxx_MLRP_#accessCode#
      
 After having completed the survey or experiment, an exit code (aka redemption code) is displayed on the last page of your survey. 
 The worker has to transfer this exit code with copy & paste back to Amazon Mechnical Turk. 
@@ -99,8 +99,7 @@ codes and merge them into a DeSciL code file with the following function:
 
      Get-CodesFromQualtricsPanel -Path "Survey1-AccessCodes.csv"
 
-This will generate the final code file "Survey1-Codes.csv" which you have to submit to DeSciL staff.
-It should have the following format:
+This will generate the final code file "Survey1-Codes.csv" which should have a format similar to the following:
 
 |AccessCode      | ExitCode        |
 |----------------|-----------------|
@@ -108,10 +107,8 @@ It should have the following format:
 |8v2pKycBjrB60e1 | zZEPXySucUcmk2b |
 |...             | ...             |
 
+Additionally, the prodedure writes out a text file "Survey1-Link.txt" where the access link to the survey is stored.
 
 #### 7. Submit
 
-Just submit the codelist together with the HIT Ticket to DeSciL Staff and we are ready to run your survey within 24-48 hours.
-
-Contact DeSciL staff for fully unattended code exchange via WebService calls. However, this makes only
-sense, if you have a high number surveys to deploy or if you do real-time gaming.
+Just submit the codelist and the link file together with the HIT Ticket to DeSciL Staff and we are ready to run your survey within 24-48 hours.
