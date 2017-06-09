@@ -85,14 +85,7 @@ Access codes will be extracted from the links. The part behind the segment `_MLR
 Notes:
 - [Generating Unique Survey Links](http://www.qualtrics.com/university/researchsuite/distributing/more-distribution-methods/generating-unique-survey-links/)
 
-#### 5. Dispay exit codes
-
-Turkers arrive on your survey with one of the links in Survey1-AccessCodes.csv. At the end of 
-the survey you have to display a message that contains the corresponding exit code.
-
-- See the file [Checkout](Checkout.md) for instructions on how to setup a 'Custom end of survey message'.
-
-#### 6. Create the final code list
+#### 5. Create the final code list
 
 In step five, you have to extract the access codes (passwords) and exit 
 codes and merge them into a DeSciL code file with the following function:
@@ -108,6 +101,13 @@ This will generate the final code file "Survey1-Codes.csv" which should have a f
 |...             | ...             |
 
 Additionally, the prodedure writes out a text file "Survey1-Link.txt" where the access link to the survey is stored.
+
+#### 6. Dispay exit codes
+
+Turkers arrive on your survey with one of the links in Survey1-AccessCodes.csv. At the end of 
+the survey you have to display a message that contains the corresponding exit code.
+
+- See the file [Checkout](Checkout.md) for instructions on how to setup a 'Custom end of survey message'.
 
 #### 7. Submit
 
