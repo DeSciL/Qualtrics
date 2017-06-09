@@ -1,14 +1,12 @@
 # TODO Qualtrics
-# stwehrli@gmail.com
-# Oct 2015
 
-Issues / Bugs
+## Issues / Bugs
 - 
 
-Priority 1
+## Priority 1
 - Consider moving panel setup instructions to a new help function.
 
-Priority 2
+## Priority 2
 - Add examples how to call webservices/webhooks with JavaScript
 - Add more examples of consent forms found in the wild
 - Add example for web asset hosting
