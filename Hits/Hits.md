@@ -19,18 +19,20 @@ To run your HITs, DeSciL staff expects a set of files which specifiy your HIT. L
 
 The simplest way to create a HIT definition is to modify the file with a text editor. A minimal version of the JSON looks the following:
 
-     {
-		"Annotation":  "Study1",
-		"Assignments":  10,
-		"Reward":  1.00,
-		"HitDuration":  3600,
-		"HitTitle":  "Study on decision making",
-		"HitDescription":  "Make choices between several options and receive a bonus up to USD 1.",
-		"HitKeywords":  "survey, decision making, scientific study",
-		"TreatmentUrl":  "https://qualtrics.com/?#accessCode#",
-		"QualCountry":  "US",
-      }
-	  
+		{
+			"Annotation":  "DecisionStudy",
+			"Assignments":  10,
+			"Reward":  "1.00",
+			"HitDuration":  3600,
+			"HitTitle":  "Study on decision making",
+			"HitDescription":  "Make choices between several options and receive a 
+			                    bonus up to USD 1.",
+			"HitKeywords":  "survey, decision making, scientific study",
+			"TreatmentUrl":  "https://qualtrics.com/?#accessCode#",
+			"QualCountry":  "US",
+			"QualMinApproval":  95
+		}
+
 A full version of the HIT definition is [HitDefinition.json](HitDefinition.json), the minimal version is here: [HitDefinition-Mini.json](HitDefinition-mini.json). Additionally, 
 the following PowerShell script [HitDefinition.ps1](HitDefinition.ps1) might help to create, validate, and submit your definition. It can be sourced directly with:
 
@@ -44,14 +46,21 @@ the following PowerShell script [HitDefinition.ps1](HitDefinition.ps1) might hel
 On the HIT previw page on Mturk we display your `<div />`. These instructions are displayed before the turker accept the HIT and helps him to decide if he is eligible to perform the task.
 Instructions will be rendered with [twitter boostrap](http://getbootstrap.com/). 
 
-     <div>
-		<p><b>Purpose of the study:</b> To understand decision making processes</p> 
-		<p><b>What you will do:</b> If you decide to participate, you will fill out a questionnaire. <p>  
-		<p><b>Time required:</b>  The study will take approximately 15 minutes to complete.</p>    
-		<p><b>Risks:</b> There are no anticipated risks associated with participating in this study.</p>  
-		<p><b>Compensation:</b> You will receive USD 1 for participating.</p>
-		<p><b>Support:</b> In case trouble, search for a HIT called 'ETH Trouble Ticket'.</p>
-	 </div>
+	<dl class="dl-horizontal">     
+		<dt>Purpose of the study:</dt>     
+		<dd>To understand human decision making.</dd>     
+		<dt>What you will do:</dt>     
+		<dd>You will complete decision making tasks and answer survey questions.</dd>     
+		<dt>Time required:</dt>     
+		<dd>Approximately 20 minutes.</dd>     
+		<dt>Risks:</dt>
+		<dd>There are no anticipated risks and your participation will remain anonymous.</dd>     
+		<dt>Compensation:</dt>     
+		<dd>You will receive USD 2,00 for participating. You can earn additional money up to 
+		USD 2,00 in the decision tasks which will be paid by bonus after completing the HIT.</dd>     
+		<dt>Support:</dt>     
+		<dd>In case of trouble, search for a HIT called 'ETH DeSciL Trouble Ticket'.</dd> 
+	</dl>
 	 
 #### 3. Sampling, Exclusion, and Inclusion Criteria
 
