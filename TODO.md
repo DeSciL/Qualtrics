@@ -1,7 +1,7 @@
 # TODO Qualtrics
 
 ## Issues / Bugs
-- 
+- Just a simple update of the todo list
 
 ## Priority 1
 - Consider moving panel setup instructions to a new help function.
